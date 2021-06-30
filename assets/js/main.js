@@ -162,5 +162,13 @@
     duration: 1000,
     easing: "ease-in-out-back"
   });
+  
+  //  Disable animations on devices < 800px
+  AOS.init({
+    disable: function() {
+      var maxWidth = 800;
+      return window.innerWidth < maxWidth;
+    }
+  });
 
 })(jQuery);
